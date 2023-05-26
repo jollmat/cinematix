@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Importing NGSELECT CSS file. */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+/* ngx-json-viewer */
+.ngx-json-viewer {
+    font-size: 0.8em !important;
+}

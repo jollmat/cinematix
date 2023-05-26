@@ -1,0 +1,18 @@
+<ng-container *ngIf="productRating && productRating.value">
+    <div class="d-flex flex-column">
+        <div *ngIf="!hideProviderName" class="fst-italic">{{productRating.source}}</div>
+        <ng-container *ngIf="productRating.valueType==='PERCENT'">
+            <div class="rating px-1 {{'percent-'+(100-getRoundPercent(productRating.value))}}">
+                {{productRating.value}}%
+            </div>
+        </ng-container>
+        <ng-container *ngIf="productRating.valueType==='RATING'">
+            <div class="rating px-1 r-{{getRoundRating(productRating.value)}}" *ngIf="productRating.valueMax===10">
+                {{productRating.value}}/{{productRating.valueMax}}
+            </div>
+            <div class="rating px-1 r-{{getRoundRating(productRating.value/10)}}" *ngIf="productRating.valueMax===100">
+                {{productRating.value}}/{{productRating.valueMax}}
+            </div>
+        </ng-container>
+    </div>
+</ng-container>
